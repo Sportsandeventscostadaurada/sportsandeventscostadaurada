@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sports &amp; Events Costa Daurada — Una Experiencia Para Toda la Vida</title>
-<meta name="description" content="Programas deportivos de élite en toda Europa. Especialistas en fútbol, con capacidad para baloncesto, tenis, hockey patines, balonmano y muchas más disciplinas.">
+<title>Sports &amp; Events Costa Daurada — A Lifetime Experience</title>
+<meta name="description" content="Elite sports programs across Europe. Specialists in football, with capacity for basketball, tennis, roller hockey, handball and many more disciplines.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Crect width='100' height='90' fill='%230B0B0C'/%3E%3Cpath d='M14,68 L14,44 L23,58 L32,32 L41,58 L50,20 L59,58 L68,32 L77,58 L86,44 L86,68 Z' fill='none' stroke='%23B7975F' stroke-width='3' stroke-linejoin='round'/%3E%3Crect x='14' y='68' width='72' height='9' fill='none' stroke='%23B7975F' stroke-width='2.5'/%3E%3Ccircle cx='14' cy='44' r='3' fill='%23B7975F'/%3E%3Ccircle cx='32' cy='32' r='3.2' fill='%23B7975F'/%3E%3Ccircle cx='50' cy='20' r='3.6' fill='%23B7975F'/%3E%3Ccircle cx='68' cy='32' r='3.2' fill='%23B7975F'/%3E%3Ccircle cx='86' cy='44' r='3' fill='%23B7975F'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,12 +85,12 @@
   .scroll-cue .line::after{ content:''; position:absolute; top:-100%; left:0; width:100%; height:100%; background:var(--gold); animation:drip 2.2s var(--ease) infinite; }
   @keyframes drip{ 0%{ top:-100%; } 60%,100%{ top:100%; } }
   .stats{ background:var(--ink-soft); border-top:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line); }
-  .stats .wrap{ display:grid; grid-template-columns:repeat(4,1fr); }
+  .stats .wrap{ display:grid; grid-template-columns:repeat(3,1fr); }
   .stat{ padding:36px 26px; border-left:1px solid var(--ink-line); text-align:left; }
   .stat:first-child{ border-left:none; }
   .stat-num{ font-family:var(--mono); font-size:clamp(1.7rem,3vw,2.4rem); color:var(--gold); font-weight:500; }
   .stat-label{ font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--mist); margin-top:8px; }
-  @media (max-width:760px){ .stats .wrap{ grid-template-columns:repeat(2,1fr); } .stat{ border-left:none; border-top:1px solid var(--ink-line); } .stat:nth-child(1),.stat:nth-child(2){ border-top:none; } .stat:nth-child(even){ border-left:1px solid var(--ink-line); } }
+  @media (max-width:760px){ .stats .wrap{ grid-template-columns:1fr; } .stat{ border-left:none; border-top:1px solid var(--ink-line); } .stat:first-child{ border-top:none; } }
   .section{ padding:130px 0; }
   @media (max-width:760px){ .section{ padding:84px 0; } }
   .section-head{ max-width:640px; margin-bottom:64px; }
@@ -220,8 +220,8 @@
       </div>
       <div class="nav-cta">
         <div class="lang-switch">
-          <button type="button" data-lang="es">ES</button>
           <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
         </div>
         <a href="#contact" class="btn btn-gold" data-i18n="nav.cta">Request a Program</a>
       </div>
@@ -231,8 +231,8 @@
 
   <div class="mobile-panel" id="mobilePanel">
     <div class="lang-switch">
-      <button type="button" data-lang="es">ES</button>
       <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="es">ES</button>
     </div>
     <a href="#about" data-i18n="nav.about">About</a>
     <a href="#programs" data-i18n="nav.programs">Programs</a>
@@ -265,10 +265,9 @@
 
   <section class="stats">
     <div class="wrap">
-      <div class="stat reveal" style="--i:0"><div class="stat-num" data-count="12">0</div><div class="stat-label" data-i18n="stat.label1">Clubs and Academies We Work With</div></div>
-      <div class="stat reveal" style="--i:1"><div class="stat-num" data-count="6">0</div><div class="stat-label" data-i18n="stat.label2">Years Perfecting the Method</div></div>
-      <div class="stat reveal" style="--i:2"><div class="stat-num" data-count="15">0</div><div class="stat-label" data-i18n="stat.label3">Careers That Started Here</div></div>
-      <div class="stat reveal" style="--i:3"><div class="stat-num" data-count="2">0</div><div class="stat-label" data-i18n="stat.label4">Dedicated Programs</div></div>
+      <div class="stat reveal" style="--i:0"><div class="stat-num" data-count="12">0</div><div class="stat-label" data-i18n="stat.label1">Academies and Methodologies — Past and Present</div></div>
+      <div class="stat reveal" style="--i:1"><div class="stat-num" data-count="12">0</div><div class="stat-label" data-i18n="stat.label2">Years Perfecting the Method</div></div>
+      <div class="stat reveal" style="--i:2"><div class="stat-num" data-count="2">0</div><div class="stat-label" data-i18n="stat.label3">Dedicated Programs</div></div>
     </div>
   </section>
 
@@ -282,7 +281,7 @@
             <p class="reveal" style="--i:2" data-i18n="about.p1">About paragraph 1.</p>
             <p class="reveal" style="--i:3" data-i18n="about.p2">About paragraph 2.</p>
           </div>
-          <p class="reveal section-label" style="--i:4" data-i18n="about.clubs_label">Methodologies and academies we work with</p>
+          <p class="reveal section-label" style="--i:4" data-i18n="about.clubs_label">Academies and methodologies we've collaborated with, past and present</p>
           <div class="club-row reveal" style="--i:4">
             <span class="club-pill">Fundación Real Madrid</span>
             <span class="club-pill">Sporting de Portugal</span>
@@ -467,20 +466,20 @@
           </div>
         </div>
         <div>
-          <p class="section-label reveal" style="--i:0; margin-top:0;" data-i18n="track.list_label">Clubs and academies we work with</p>
+          <p class="section-label reveal" style="--i:0; margin-top:0;" data-i18n="track.list_label">Academies and methodologies we've collaborated with, past and present</p>
           <ul class="club-list">
-            <li class="reveal" style="--i:0">Fundación Real Madrid <span>España</span></li>
+            <li class="reveal" style="--i:0">Fundación Real Madrid <span>Spain</span></li>
             <li class="reveal" style="--i:0">Sporting de Portugal <span>Portugal</span></li>
-            <li class="reveal" style="--i:0">PSV Schools <span>Países Bajos</span></li>
-            <li class="reveal" style="--i:1">AC Milan Palauno Schools <span>Italia</span></li>
-            <li class="reveal" style="--i:1">Juventus <span>Italia</span></li>
-            <li class="reveal" style="--i:1">Real Sociedad <span>España</span></li>
-            <li class="reveal" style="--i:2">Girona FC <span>España</span></li>
-            <li class="reveal" style="--i:2">RCD Espanyol <span>España</span></li>
-            <li class="reveal" style="--i:2">Atlético de Madrid <span>España</span></li>
-            <li class="reveal" style="--i:3">Valencia CF <span>España</span></li>
-            <li class="reveal" style="--i:3">CE Sabadell <span>España</span></li>
-            <li class="reveal" style="--i:4">FC Barcelona Escola <span>España</span></li>
+            <li class="reveal" style="--i:0">PSV Schools <span>Netherlands</span></li>
+            <li class="reveal" style="--i:1">AC Milan Palauno Schools <span>Italy</span></li>
+            <li class="reveal" style="--i:1">Juventus <span>Italy</span></li>
+            <li class="reveal" style="--i:1">Real Sociedad <span>Spain</span></li>
+            <li class="reveal" style="--i:2">Girona FC <span>Spain</span></li>
+            <li class="reveal" style="--i:2">RCD Espanyol <span>Spain</span></li>
+            <li class="reveal" style="--i:2">Atlético de Madrid <span>Spain</span></li>
+            <li class="reveal" style="--i:3">Valencia CF <span>Spain</span></li>
+            <li class="reveal" style="--i:3">CE Sabadell <span>Spain</span></li>
+            <li class="reveal" style="--i:4">FC Barcelona Escola <span>Spain</span></li>
           </ul>
         </div>
       </div>
@@ -580,25 +579,97 @@
 
 <script>
   const translations = {
+    en: {
+      "nav.about":"About","nav.programs":"Programs","nav.sports":"Sports","nav.legacy":"Legacy","nav.track":"Track Record","nav.cta":"Request a Program","nav.cta_footer":"Contact",
+      "hero.eyebrow":"A Lifetime Experience",
+      "hero.h1":"European football,<br>Spanish <em>edge.</em>",
+      "hero.lede":"Elite sports programs across Europe, built on the methodologies of the continent's best academies. We've collaborated with clubs and academies including Fundación Real Madrid, Juventus, PSV Schools and FC Barcelona Escola, among others, in the past and in the present — for teams, and for the coaches who shape them.",
+      "hero.cta1":"Explore Programs","hero.cta2":"Request a Program","hero.scroll":"Scroll",
+      "stat.label1":"Academies and Methodologies — Past and Present","stat.label2":"Years Perfecting the Method","stat.label3":"Dedicated Programs",
+      "about.eyebrow":"The Company",
+      "about.h2":"Experts in world-class football, with Europe's best methodologies.",
+      "about.p1":"<strong>Sports &amp; Events Costa Daurada</strong> designs world-class sports programs for adults, teenagers and children, built on the methodologies that have defined European football in recent years.",
+      "about.p2":"We work with clubs, academies and facilities across Europe — bringing structure, coaching and professional standards to every program. We've collaborated with some of the best methodologies on the continent, in the past and in the present.",
+      "about.clubs_label":"Academies and methodologies we've collaborated with, past and present",
+      "programs.eyebrow":"Programs","programs.h2":"Two paths. One standard.",
+      "programs.lede":"Whatever your role — on the pitch or on the touchline — every program is built around real professional football.",
+      "program1.num":"01 — For Teams","program1.h3":"Train like a professional, for a day or a season.",
+      "program1.p":"Every program is adapted to your level — from a youth academy to a first team preparing for competitive tournaments. We work across Europe, with sessions supported by methodologies from clubs and academies including Fundación Real Madrid, Real Sociedad, Girona FC and RCD Espanyol, in the past and in the present, always with qualified coaches and a professional standard.",
+      "program1.li1":"Elite training camps","program1.li2":"Friendly tours","program1.li3":"Competitive tournaments","program1.li4":"Pre-season training",
+      "program2.num":"02 — For Coaches","program2.h3":"The foundations of European football, from those who teach it.",
+      "program2.p":"Held to the same standard as our team programs, our coaching education draws on collaboration with methodologies including PSV Schools, Juventus and Sporting de Portugal, among others, in the past and in the present. It's built to open your footballing mind and hand you the tools to transfer what matters most — starting with your youngest players.",
+      "program2.li1":"Coaching education","program2.li2":"Methodology transfer","program2.li3":"Youth-category foundations","program2.li4":"On-pitch mentoring",
+      "multisport.eyebrow":"Our Specialty and Beyond","multisport.h2":"Elite football. And so much more.",
+      "multisport.lede":"Football is our absolute specialty — but our organizational capacity goes far beyond it.",
+      "multisport.football_tag":"Our Specialty","multisport.football_h3":"Football",
+      "multisport.football_p":"Elite football programs for teams and coaches, built on Europe's best methodologies.",
+      "sport1":"Basketball","sport2":"Tennis","sport3":"Roller Hockey","sport4":"Handball","sport5":"And many more disciplines",
+      "multisport.extra_h3":"Cultural Activities and Adventure Sports",
+      "multisport.extra_p":"We complement every program with cultural activities and adventure sports, for a complete experience on and off the field.",
+      "itinerary.eyebrow":"Sample Week Examples","itinerary.h2":"This is what a week with us looks like.",
+      "itinerary.lede":"Two real 7-day itinerary examples, depending on your group's profile.",
+      "itinerary.tab1":"Sports Program","itinerary.tab1_sub":"For Players and Teams",
+      "itinerary.tab2":"Professional Course","itinerary.tab2_sub":"For Coaches",
+      "day.label1":"Day 1","day.label2":"Day 2","day.label3":"Day 3","day.label4":"Day 4","day.label5":"Day 5","day.label6":"Day 6","day.label7":"Day 7",
+      "t1.day1":"Arrival, private transfers and check-in at personalized accommodation on a full-board basis.",
+      "t1.day2":"Morning of intensive training at official facilities of professional clubs. Afternoon competitive friendly match.",
+      "t1.day3":"Morning training session. Afternoon guided cultural tour of the area.",
+      "t1.day4":"Morning training session. Afternoon leisure and team-bonding activities (e.g. theme park).",
+      "t1.day5":"Morning training session. Afternoon guided visit to a professional stadium, museum and official store.",
+      "t1.day6":"Free morning or light activation session. Live attendance at an official top-flight league match.",
+      "t1.day7":"Official program certificates presented. Private transfer back to the airport.",
+      "t2.day1":"Arrival, transfers and check-in at personalized accommodation.",
+      "t2.day2":"Morning studying tactical play and methodology. Afternoon direct observation of official academy training sessions on the field.",
+      "t2.day3":"Interaction with top coaches from professional academies and attendance at seminars.",
+      "t2.day4":"Specific training on youth player development. Opportunity to share sessions with well-known former players.",
+      "t2.day5":"Advanced tactical study. Visit to stadiums and museums.",
+      "t2.day6":"Individual evaluations and official course certificates presented. Attendance at an official top-flight league match.",
+      "t2.day7":"Breakfast and transfer back to the airport.",
+      "legacy.eyebrow":"Legacy","legacy.h2":"Every one of them started exactly where you're standing.",
+      "legacy.p":"Messi. Xavi. Iniesta. Puyol. Casillas. Guardiola. The same methodologies that shaped them are what every one of our programs is built on.",
+      "video.eyebrow":"Real Experiences","video.h2":"Examples of Our Programs",
+      "video.lede":"This is how our groups experience the programs — in their own words and on the pitch.",
+      "track.eyebrow":"Track Record","track.h2":"Shaped by Europe's best methodologies.",
+      "track.p1":"We've collaborated with clubs, academies and football schools across Europe, in the past and in the present, with sessions led by qualified coaches to the same standard as a professional side.",
+      "track.p2":"Wherever your program takes you, you'll find the same quality of treatment, the same closeness, and the flexibility to shape the experience around your team.",
+      "track.list_label":"Academies and methodologies we've collaborated with, past and present",
+      "value1.mark":"— Quality","value1.h3":"A professional standard, whatever your level.",
+      "value1.p":"Every session is built to the same standard, whether you're a first team or a youth side stepping onto a professional pitch for the first time.",
+      "value2.mark":"— Closeness","value2.h3":"Shaped around your team, not a fixed itinerary.",
+      "value2.p":"Coaches adapt every session to where your team actually is.",
+      "value3.mark":"— Flexibility","value3.h3":"Camps, tours, tournaments or pre-season.",
+      "value3.p":"Whatever format fits your calendar and your goals, we build the program around it.",
+      "contact.eyebrow":"Get Started","contact.h2":"Request your program.",
+      "contact.p":"Tell us about your team or club, and we'll build a program around it.",
+      "contact.label_email":"Email","contact.label_phone":"Phone","contact.label_address":"Based in",
+      "contact.address_value":"Calafell, Costa Daurada, Tarragona, Spain",
+      "form.label_name":"Full name","form.label_email":"Email","form.label_club":"Club / Team","form.label_program":"Program interest",
+      "form.option1":"For Teams","form.option2":"For Coaches","form.option3":"Not sure yet",
+      "form.label_message":"Message","form.submit":"Send Request","form.note":"We'll reply within 1–2 business days.",
+      "form.msg_sent":"Opening your email client to send this request…",
+      "footer.rights":"© 2026 Sports &amp; Events Costa Daurada. All rights reserved.","footer.tagline":"A Lifetime Experience",
+      "meta.title":"Sports &amp; Events Costa Daurada — A Lifetime Experience",
+      "meta.desc":"Elite sports programs across Europe. Specialists in football, with capacity for basketball, tennis, roller hockey, handball and many more disciplines."
+    },
     es: {
       "nav.about":"Sobre Nosotros","nav.programs":"Programas","nav.sports":"Deportes","nav.legacy":"Legado","nav.track":"Trayectoria","nav.cta":"Solicita un Programa","nav.cta_footer":"Contacto",
       "hero.eyebrow":"Una Experiencia Para Toda la Vida",
       "hero.h1":"Fútbol europeo,<br>sello <em>español.</em>",
-      "hero.lede":"Programas deportivos de élite en toda Europa, construidos sobre las metodologías de las mejores academias del continente. En el pasado y en el presente hemos trabajado con clubes y academias como Fundación Real Madrid, Juventus, PSV Schools y FC Barcelona Escola, entre otros — para equipos, y para los entrenadores que los forman.",
+      "hero.lede":"Programas deportivos de élite en toda Europa, construidos sobre las metodologías de las mejores academias del continente. Hemos colaborado con clubes y academias como Fundación Real Madrid, Juventus, PSV Schools y FC Barcelona Escola, entre otros, en el pasado y en el presente — para equipos, y para los entrenadores que los forman.",
       "hero.cta1":"Ver Programas","hero.cta2":"Solicita un Programa","hero.scroll":"Desplázate",
-      "stat.label1":"Clubes y Academias con los que Colaboramos","stat.label2":"Años Perfeccionando el Método","stat.label3":"Carreras que Empezaron Aquí","stat.label4":"Programas Especializados",
+      "stat.label1":"Academias y Metodologías — Pasado y Presente","stat.label2":"Años Perfeccionando el Método","stat.label3":"Programas Especializados",
       "about.eyebrow":"La Empresa",
       "about.h2":"Expertos en fútbol de primer nivel, con las mejores metodologías de Europa.",
       "about.p1":"<strong>Sports &amp; Events Costa Daurada</strong> diseña programas deportivos de primer nivel para adultos, jóvenes y niños, construidos sobre las metodologías que han definido el fútbol europeo en los últimos años.",
-      "about.p2":"Trabajamos con clubes, academias e instalaciones en toda Europa — aportando estructura, coaching y estándares profesionales a cada programa. En el pasado y en el presente hemos colaborado con algunas de las mejores metodologías del continente.",
-      "about.clubs_label":"Metodologías y academias con las que colaboramos",
+      "about.p2":"Trabajamos con clubes, academias e instalaciones en toda Europa — aportando estructura, coaching y estándares profesionales a cada programa. Hemos colaborado con algunas de las mejores metodologías del continente, en el pasado y en el presente.",
+      "about.clubs_label":"Academias y metodologías con las que hemos colaborado o colaboramos",
       "programs.eyebrow":"Programas","programs.h2":"Dos caminos. Un mismo estándar.",
-      "programs.lede":"Sea cual sea tu papel — en el campo o en la banda — cada programa está construido en torno al fútbol profesional real, no a una versión simplificada.",
+      "programs.lede":"Sea cual sea tu papel — en el campo o en la banda — cada programa está construido en torno al fútbol profesional real.",
       "program1.num":"01 — Para Equipos","program1.h3":"Entrena como un profesional, por un día o por una temporada.",
-      "program1.p":"Cada programa se adapta a tu nivel — desde una cantera que busca dar un salto de calidad, hasta un primer equipo que prepara torneos competitivos. Trabajamos en distintos puntos de Europa, con sesiones apoyadas, en el pasado y en el presente, en metodologías de clubes y academias como Fundación Real Madrid, Real Sociedad, Girona FC y RCD Espanyol, siempre con entrenadores cualificados y un estándar profesional.",
+      "program1.p":"Cada programa se adapta a tu nivel — desde una cantera hasta un primer equipo que prepara torneos competitivos. Trabajamos en distintos puntos de Europa, con sesiones apoyadas en metodologías de clubes y academias como Fundación Real Madrid, Real Sociedad, Girona FC y RCD Espanyol, en el pasado y en el presente, siempre con entrenadores cualificados y un estándar profesional.",
       "program1.li1":"Campus de entrenamiento de élite","program1.li2":"Giras amistosas","program1.li3":"Torneos competitivos","program1.li4":"Pretemporada",
       "program2.num":"02 — Para Entrenadores","program2.h3":"Los fundamentos del fútbol europeo, de quienes lo enseñan.",
-      "program2.p":"Con el mismo nivel de exigencia que nuestros programas para equipos, nuestra formación de entrenadores se nutre de la colaboración, pasada y presente, con metodologías como las de PSV Schools, Juventus y Sporting de Portugal, entre otras. Está pensada para abrir tu mente futbolística y darte las herramientas para transmitir lo esencial — empezando por los más jóvenes.",
+      "program2.p":"Con el mismo nivel de exigencia que nuestros programas para equipos, nuestra formación de entrenadores se nutre de la colaboración con metodologías como las de PSV Schools, Juventus y Sporting de Portugal, entre otras, en el pasado y en el presente. Está pensada para abrir tu mente futbolística y darte las herramientas para transmitir lo esencial — empezando por los más jóvenes.",
       "program2.li1":"Formación de entrenadores","program2.li2":"Transferencia de metodología","program2.li3":"Fundamentos de categorías base","program2.li4":"Mentoría en el campo",
       "multisport.eyebrow":"Nuestra Especialidad y Más Allá",
       "multisport.h2":"Fútbol de élite. Y mucho más.",
@@ -632,9 +703,9 @@
       "video.eyebrow":"Experiencias Reales","video.h2":"Ejemplos de Nuestros Programas",
       "video.lede":"Así viven nuestros grupos los programas — en sus propias palabras y en el campo.",
       "track.eyebrow":"Trayectoria","track.h2":"Formados en las mejores metodologías de Europa.",
-      "track.p1":"En el pasado y en el presente, nuestros programas y eventos nos han llevado a colaborar con clubes, academias y escuelas de fútbol en distintos puntos de Europa, con sesiones dirigidas por entrenadores cualificados al mismo estándar que un equipo profesional.",
+      "track.p1":"Hemos colaborado con clubes, academias y escuelas de fútbol en distintos puntos de Europa, en el pasado y en el presente, con sesiones dirigidas por entrenadores cualificados al mismo estándar que un equipo profesional.",
       "track.p2":"Sea cual sea el punto de partida de tu programa, encontrarás el mismo trato de calidad, la misma cercanía y la flexibilidad para adaptar la experiencia a tu equipo.",
-      "track.list_label":"Clubes y academias con los que colaboramos",
+      "track.list_label":"Academias y metodologías con las que hemos colaborado o colaboramos",
       "value1.mark":"— Calidad","value1.h3":"Un estándar profesional, sea cual sea tu nivel.",
       "value1.p":"Cada sesión se construye con el mismo estándar, ya seas un primer equipo o un equipo juvenil pisando un campo profesional por primera vez.",
       "value2.mark":"— Cercanía","value2.h3":"Adaptado a tu equipo, no a un itinerario fijo.",
@@ -652,82 +723,10 @@
       "footer.rights":"© 2026 Sports &amp; Events Costa Daurada. Todos los derechos reservados.","footer.tagline":"Una Experiencia Para Toda la Vida",
       "meta.title":"Sports &amp; Events Costa Daurada — Una Experiencia Para Toda la Vida",
       "meta.desc":"Programas deportivos de élite en toda Europa. Especialistas en fútbol, con capacidad para baloncesto, tenis, hockey patines, balonmano y muchas más disciplinas."
-    },
-    en: {
-      "nav.about":"About","nav.programs":"Programs","nav.sports":"Sports","nav.legacy":"Legacy","nav.track":"Track Record","nav.cta":"Request a Program","nav.cta_footer":"Contact",
-      "hero.eyebrow":"A Lifetime Experience",
-      "hero.h1":"European football,<br>Spanish <em>edge.</em>",
-      "hero.lede":"Elite sports programs across Europe, built on the methodologies of the continent's best academies. In the past and in the present we have worked with clubs and academies including Fundación Real Madrid, Juventus, PSV Schools and FC Barcelona Escola, among others — for teams, and for the coaches who shape them.",
-      "hero.cta1":"Explore Programs","hero.cta2":"Request a Program","hero.scroll":"Scroll",
-      "stat.label1":"Clubs and Academies We Work With","stat.label2":"Years Perfecting the Method","stat.label3":"Careers That Started Here","stat.label4":"Dedicated Programs",
-      "about.eyebrow":"The Company",
-      "about.h2":"Experts in world-class football, with Europe's best methodologies.",
-      "about.p1":"<strong>Sports &amp; Events Costa Daurada</strong> designs world-class sports programs for adults, teenagers and children, built on the methodologies that have defined European football in recent years.",
-      "about.p2":"We work with clubs, academies and facilities across Europe — bringing structure, coaching and professional standards to every program. In the past and in the present, we have collaborated with some of the best methodologies on the continent.",
-      "about.clubs_label":"Methodologies and academies we work with",
-      "programs.eyebrow":"Programs","programs.h2":"Two paths. One standard.",
-      "programs.lede":"Whatever your role — on the pitch or on the touchline — every program is built around real professional football.",
-      "program1.num":"01 — For Teams","program1.h3":"Train like a professional, for a day or a season.",
-      "program1.p":"Every program is adapted to your level — from a youth academy to a first team preparing for competitive tournaments. We work across Europe, with sessions supported, in the past and in the present, by methodologies from clubs and academies including Fundación Real Madrid, Real Sociedad, Girona FC and RCD Espanyol, always with qualified coaches and a professional standard.",
-      "program1.li1":"Elite training camps","program1.li2":"Friendly tours","program1.li3":"Competitive tournaments","program1.li4":"Pre-season training",
-      "program2.num":"02 — For Coaches","program2.h3":"The foundations of European football, from those who teach it.",
-      "program2.p":"Held to the same standard as our team programs, our coaching education draws on collaboration, past and present, with methodologies including PSV Schools, Juventus and Sporting de Portugal, among others. It's built to open your footballing mind and hand you the tools to transfer what matters most — starting with your youngest players.",
-      "program2.li1":"Coaching education","program2.li2":"Methodology transfer","program2.li3":"Youth-category foundations","program2.li4":"On-pitch mentoring",
-      "multisport.eyebrow":"Our Specialty and Beyond","multisport.h2":"Elite football. And so much more.",
-      "multisport.lede":"Football is our absolute specialty — but our organizational capacity goes far beyond it.",
-      "multisport.football_tag":"Our Specialty","multisport.football_h3":"Football",
-      "multisport.football_p":"Elite football programs for teams and coaches, built on Europe's best methodologies.",
-      "sport1":"Basketball","sport2":"Tennis","sport3":"Roller Hockey","sport4":"Handball","sport5":"And many more disciplines",
-      "multisport.extra_h3":"Cultural Activities and Adventure Sports",
-      "multisport.extra_p":"We complement every program with cultural activities and adventure sports, for a complete experience on and off the field.",
-      "itinerary.eyebrow":"Sample Week Examples","itinerary.h2":"This is what a week with us looks like.",
-      "itinerary.lede":"Two real 7-day itinerary examples, depending on your group's profile.",
-      "itinerary.tab1":"Sports Program","itinerary.tab1_sub":"For Players and Teams",
-      "itinerary.tab2":"Professional Course","itinerary.tab2_sub":"For Coaches",
-      "day.label1":"Day 1","day.label2":"Day 2","day.label3":"Day 3","day.label4":"Day 4","day.label5":"Day 5","day.label6":"Day 6","day.label7":"Day 7",
-      "t1.day1":"Arrival, private transfers and check-in at personalized accommodation on a full-board basis.",
-      "t1.day2":"Morning of intensive training at official facilities of professional clubs. Afternoon competitive friendly match.",
-      "t1.day3":"Morning training session. Afternoon guided cultural tour of the area.",
-      "t1.day4":"Morning training session. Afternoon leisure and team-bonding activities (e.g. theme park).",
-      "t1.day5":"Morning training session. Afternoon guided visit to a professional stadium, museum and official store.",
-      "t1.day6":"Free morning or light activation session. Live attendance at an official top-flight league match.",
-      "t1.day7":"Official program certificates presented. Private transfer back to the airport.",
-      "t2.day1":"Arrival, transfers and check-in at personalized accommodation.",
-      "t2.day2":"Morning studying tactical play and methodology. Afternoon direct observation of official academy training sessions on the field.",
-      "t2.day3":"Interaction with top coaches from professional academies and attendance at seminars.",
-      "t2.day4":"Specific training on youth player development. Opportunity to share sessions with well-known former players.",
-      "t2.day5":"Advanced tactical study. Visit to stadiums and museums.",
-      "t2.day6":"Individual evaluations and official course certificates presented. Attendance at an official top-flight league match.",
-      "t2.day7":"Breakfast and transfer back to the airport.",
-      "legacy.eyebrow":"Legacy","legacy.h2":"Every one of them started exactly where you're standing.",
-      "legacy.p":"Messi. Xavi. Iniesta. Puyol. Casillas. Guardiola. The same methodologies that shaped them are what every one of our programs is built on.",
-      "video.eyebrow":"Real Experiences","video.h2":"Examples of Our Programs",
-      "video.lede":"This is how our groups experience the programs — in their own words and on the pitch.",
-      "track.eyebrow":"Track Record","track.h2":"Shaped by Europe's best methodologies.",
-      "track.p1":"In the past and in the present, our programs and events have led us to collaborate with clubs, academies and football schools across Europe, with sessions led by qualified coaches to the same standard as a professional side.",
-      "track.p2":"Wherever your program takes you, you'll find the same quality of treatment, the same closeness, and the flexibility to shape the experience around your team.",
-      "track.list_label":"Clubs and academies we work with",
-      "value1.mark":"— Quality","value1.h3":"A professional standard, whatever your level.",
-      "value1.p":"Every session is built to the same standard, whether you're a first team or a youth side stepping onto a professional pitch for the first time.",
-      "value2.mark":"— Closeness","value2.h3":"Shaped around your team, not a fixed itinerary.",
-      "value2.p":"Coaches adapt every session to where your team actually is.",
-      "value3.mark":"— Flexibility","value3.h3":"Camps, tours, tournaments or pre-season.",
-      "value3.p":"Whatever format fits your calendar and your goals, we build the program around it.",
-      "contact.eyebrow":"Get Started","contact.h2":"Request your program.",
-      "contact.p":"Tell us about your team or club, and we'll build a program around it.",
-      "contact.label_email":"Email","contact.label_phone":"Phone","contact.label_address":"Based in",
-      "contact.address_value":"Calafell, Costa Daurada, Tarragona, Spain",
-      "form.label_name":"Full name","form.label_email":"Email","form.label_club":"Club / Team","form.label_program":"Program interest",
-      "form.option1":"For Teams","form.option2":"For Coaches","form.option3":"Not sure yet",
-      "form.label_message":"Message","form.submit":"Send Request","form.note":"We'll reply within 1–2 business days.",
-      "form.msg_sent":"Opening your email client to send this request…",
-      "footer.rights":"© 2026 Sports &amp; Events Costa Daurada. All rights reserved.","footer.tagline":"A Lifetime Experience",
-      "meta.title":"Sports &amp; Events Costa Daurada — A Lifetime Experience",
-      "meta.desc":"Elite sports programs across Europe. Specialists in football, with capacity for basketball, tennis, roller hockey, handball and many more disciplines."
     }
   };
 
-  let currentLang = 'es';
+  let currentLang = 'en';
 
   function setLang(lang){
     if(!translations[lang]) return;
@@ -746,7 +745,7 @@
 
   document.querySelectorAll('.lang-switch button').forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
   const savedLang = localStorage.getItem('secd_lang');
-  setLang(savedLang === 'en' ? 'en' : 'es');
+  setLang(savedLang === 'es' ? 'es' : 'en');
 
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive:true });
