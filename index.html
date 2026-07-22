@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports &amp; Events Costa Daurada — Una Experiencia Para Toda la Vida</title>
+<meta name="description" content="Programas de fútbol de élite en toda Europa. En el pasado y en el presente colaboramos con metodologías como Fundación Real Madrid, Juventus, PSV Academy y FC Barcelona Escola — para equipos y para entrenadores.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%230B0B0C'/%3E%3Cpath d='M10 34 L10 20 L18 27 L24 14 L30 27 L38 20 L38 34 Z' fill='none' stroke='%23B7975F' stroke-width='2.5' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cline x1='10' y1='34' x2='38' y2='34' stroke='%23B7975F' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='18' r='2.6' fill='%23B7975F'/%3E%3Ccircle cx='24' cy='12' r='2.8' fill='%23B7975F'/%3E%3Ccircle cx='38' cy='18' r='2.6' fill='%23B7975F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0B0C;
+    --ink-soft:#17181B;
+    --ink-line: rgba(255,255,255,0.10);
+    --paper:#F6F5F1;
+    --paper-line: rgba(11,11,12,0.10);
+    --gold:#B7975F;
+    --gold-bright:#D9BC8C;
+    --pitch:#16241C;
+    --graphite:#5B5B5F;
+    --mist:#A8A8AC;
+    --white:#FDFDFC;
+
+    --display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --body: 'Inter', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+    --ease: cubic-bezier(.16,.84,.44,1);
+    --container: 1240px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  button{ font:inherit; cursor:pointer; }
+
+  .wrap{ max-width:var(--container); margin:0 auto; padding:0 40px; }
+  @media (max-width:700px){ .wrap{ padding:0 22px; } }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:''; width:22px; height:1px; background:var(--gold);
+    display:inline-block;
+  }
+
+  h1,h2,h3{ font-family:var(--display); font-weight:700; letter-spacing:-0.01em; line-height:1.02; }
+
+  .section-label{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--graphite); margin-top:26px;
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .9s var(--ease), transform .9s var(--ease); transition-delay:calc(var(--i,0) * 90ms); }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:22px 0;
+    transition:background .5s var(--ease), padding .5s var(--ease), border-color .5s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{
+    background:rgba(11,11,12,0.82);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding:14px 0;
+    border-color:var(--ink-line);
+  }
+  .nav .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:10px; color:var(--white); }
+  .brand svg{ width:26px; height:24px; flex-shrink:0; }
+  .brand-word{ font-family:var(--display); font-weight:700; font-size:.95rem; letter-spacing:.02em; }
+  .brand-word span{ display:block; font-family:var(--mono); font-weight:400; font-size:.58rem; letter-spacing:.24em; color:var(--gold); margin-top:2px; }
+
+  .nav-links{ display:flex; align-items:center; gap:38px; }
+  .nav-links a{
+    color:var(--mist); font-size:.86rem; font-weight:500; position:relative; padding:4px 0;
+    transition:color .3s var(--ease);
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:var(--gold);
+    transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease);
+  }
+  .nav-links a:hover{ color:var(--white); }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:500;
+    padding:14px 26px; border-radius:2px; border:1px solid transparent;
+    transition:all .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-gold{ background:var(--gold); color:var(--ink); }
+  .btn-gold:hover{ background:var(--gold-bright); transform:translateY(-2px); }
+  .btn-ghost-dark{ border-color:rgba(255,255,255,0.28); color:var(--white); }
+  .btn-ghost-dark:hover{ border-color:var(--gold); color:var(--gold); }
+  .btn-ghost-light{ border-color:var(--paper-line); color:var(--ink); }
+  .btn-ghost-light:hover{ border-color:var(--gold); color:var(--gold); }
+
+  .nav-cta{ display:inline-flex; align-items:center; gap:16px; }
+  .lang-switch{
+    display:flex; align-items:center; gap:2px; border:1px solid rgba(255,255,255,0.28);
+    border-radius:2px; overflow:hidden;
+  }
+  .lang-switch button{
+    background:transparent; border:none; color:var(--mist); font-family:var(--mono);
+    font-size:.68rem; letter-spacing:.08em; padding:8px 12px; transition:all .3s var(--ease);
+  }
+  .lang-switch button.active{ background:var(--gold); color:var(--ink); }
+  .lang-switch button:hover:not(.active){ color:var(--white); }
+
+  .burger{ display:none; background:none; border:0; width:28px; height:20px; position:relative; }
+  .burger span{ position:absolute; left:0; right:0; height:1px; background:var(--white); transition:transform .3s var(--ease), opacity .3s var(--ease); }
+  .burger span:nth-child(1){ top:0; }
+  .burger span:nth-child(2){ top:9px; }
+  .burger span:nth-child(3){ top:18px; }
+  .burger.open span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
+  .burger.open span:nth-child(2){ opacity:0; }
+  .burger.open span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
+
+  .mobile-panel{
+    position:fixed; inset:0; z-index:90; background:var(--ink);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px;
+    transform:translateY(-100%); transition:transform .5s var(--ease);
+  }
+  .mobile-panel.open{ transform:translateY(0); }
+  .mobile-panel a{ color:var(--white); font-family:var(--display); font-size:1.6rem; font-weight:600; }
+  .mobile-panel a:hover{ color:var(--gold); }
+
+  @media (max-width:880px){
+    .nav-links{ display:none; }
+    .nav-cta .lang-switch{ display:none; }
+    .burger{ display:block; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; background:var(--ink); color:var(--white);
+    min-height:100vh; display:flex; align-items:center;
+    padding:150px 0 90px;
+    overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(183,151,95,0.16), transparent 60%),
+      radial-gradient(ellipse 40% 40% at 10% 90%, rgba(183,151,95,0.08), transparent 60%);
+  }
+  .hero-beams{ position:absolute; top:-10%; right:-8%; width:60%; max-width:640px; z-index:0; opacity:.55; }
+  .hero-beams .beam{ transform-origin:120px 40px; animation:sweep 9s ease-in-out infinite; }
+  .hero-beams .beam:nth-child(2){ animation-delay:-3s; opacity:.6; }
+  .hero-beams .beam:nth-child(3){ animation-delay:-6s; opacity:.35; }
+  @keyframes sweep{
+    0%,100%{ transform:rotate(-6deg); }
+    50%{ transform:rotate(6deg); }
+  }
+  .hero .wrap{ position:relative; z-index:1; }
+  .hero-inner{ max-width:760px; }
+  .hero-eyebrow{ margin-bottom:26px; }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 5.6rem);
+    color:var(--white);
+    margin-bottom:26px;
+  }
+  .hero h1 em{ font-style:normal; color:var(--gold); }
+  .hero p.lede{
+    font-size:clamp(1.02rem, 1.6vw, 1.22rem);
+    color:var(--mist);
+    max-width:560px;
+    line-height:1.6;
+    margin-bottom:44px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:80px; }
+
+  .scroll-cue{
+    display:flex; align-items:center; gap:12px;
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--mist);
+  }
+  .scroll-cue .line{ width:1px; height:34px; background:linear-gradient(var(--gold), transparent); position:relative; overflow:hidden; }
+  .scroll-cue .line::after{
+    content:''; position:absolute; top:-100%; left:0; width:100%; height:100%; background:var(--gold);
+    animation:drip 2.2s var(--ease) infinite;
+  }
+  @keyframes drip{ 0%{ top:-100%; } 60%,100%{ top:100%; } }
+
+  /* ---------- stat strip ---------- */
+  .stats{ background:var(--ink-soft); border-top:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line); }
+  .stats .wrap{ display:grid; grid-template-columns:repeat(4,1fr); }
+  .stat{ padding:36px 26px; border-left:1px solid var(--ink-line); text-align:left; }
+  .stat:first-child{ border-left:none; }
+  .stat-num{ font-family:var(--mono); font-size:clamp(1.7rem,3vw,2.4rem); color:var(--gold); font-weight:500; }
+  .stat-label{ font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--mist); margin-top:8px; }
+  @media (max-width:760px){
+    .stats .wrap{ grid-template-columns:repeat(2,1fr); }
+    .stat{ border-left:none; border-top:1px solid var(--ink-line); }
+    .stat:nth-child(1),.stat:nth-child(2){ border-top:none; }
+    .stat:nth-child(even){ border-left:1px solid var(--ink-line); }
+  }
+
+  /* ---------- generic section ---------- */
+  .section{ padding:130px 0; }
+  @media (max-width:760px){ .section{ padding:84px 0; } }
+  .section-dark{ background:var(--ink); color:var(--white); }
+  .section-head{ max-width:640px; margin-bottom:64px; }
+  .section-head h2{ font-size:clamp(2rem,4vw,3.2rem); margin-top:18px; }
+  .section-dark .section-head h2{ color:var(--white); }
+  .section-head p{ margin-top:20px; color:var(--graphite); font-size:1.05rem; line-height:1.7; max-width:560px; }
+  .section-dark .section-head p{ color:var(--mist); }
+
+  /* ---------- about ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+  @media (max-width:900px){ .about-grid{ grid-template-columns:1fr; gap:44px; } }
+  .about-copy p{ font-size:1.06rem; line-height:1.8; color:var(--graphite); margin-bottom:20px; }
+  .about-copy strong{ color:var(--ink); }
+  .club-row{ display:flex; flex-wrap:wrap; gap:10px 14px; margin-top:14px; }
+  .club-pill{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase;
+    border:1px solid var(--paper-line); padding:8px 14px; color:var(--graphite);
+  }
+  .about-mark{ display:flex; align-items:center; justify-content:center; }
+  .about-mark svg{ width:100%; max-width:340px; height:auto; }
+
+  /* ---------- programs ---------- */
+  .programs-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--paper-line); }
+  @media (max-width:860px){ .programs-grid{ grid-template-columns:1fr; } }
+  .program-card{
+    background:var(--paper); padding:56px 48px; position:relative; overflow:hidden;
+    transition:background .4s var(--ease);
+  }
+  @media (max-width:760px){ .program-card{ padding:40px 26px; } }
+  .program-card:hover{ background:var(--white); }
+  .program-num{ font-family:var(--mono); font-size:.78rem; color:var(--gold); letter-spacing:.1em; }
+  .program-card h3{ font-size:clamp(1.5rem,2.6vw,2rem); margin:18px 0 20px; }
+  .program-card p{ color:var(--graphite); line-height:1.75; font-size:1rem; margin-bottom:26px; }
+  .format-list{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--paper-line); }
+  .format-list li{
+    font-size:.9rem; color:var(--ink); padding:14px 0; border-bottom:1px solid var(--paper-line);
+    display:flex; align-items:center; gap:12px;
+  }
+  .format-list li::before{ content:''; width:6px; height:6px; background:var(--gold); border-radius:50%; flex-shrink:0; }
+
+  /* ---------- legacy ticker ---------- */
+  .legacy{ background:var(--ink); color:var(--white); padding:130px 0 90px; overflow:hidden; }
+  .legacy .section-head{ max-width:680px; }
+  .legacy .section-head p{ color:var(--mist); }
+  .ticker-outer{
+    margin-top:70px; border-top:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line);
+    padding:34px 0; overflow:hidden; position:relative;
+  }
+  .ticker-outer::before, .ticker-outer::after{
+    content:''; position:absolute; top:0; bottom:0; width:120px; z-index:2; pointer-events:none;
+  }
+  .ticker-outer::before{ left:0; background:linear-gradient(90deg, var(--ink), transparent); }
+  .ticker-outer::after{ right:0; background:linear-gradient(270deg, var(--ink), transparent); }
+  .ticker-track{ display:flex; width:max-content; animation:ticker 42s linear infinite; }
+  .ticker-track:hover{ animation-play-state:paused; }
+  @keyframes ticker{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .ticker-item{
+    font-family:var(--display); font-weight:600; font-size:clamp(1.4rem,2.6vw,2.1rem);
+    color:transparent; -webkit-text-stroke:1px rgba(255,255,255,0.5);
+    padding:0 34px; white-space:nowrap; display:flex; align-items:center; gap:34px;
+  }
+  .ticker-item::after{ content:'✦'; font-size:.9rem; -webkit-text-stroke:0; color:var(--gold); }
+
+  /* ---------- track record ---------- */
+  .fac-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+  @media (max-width:900px){ .fac-grid{ grid-template-columns:1fr; gap:40px; } }
+  .fac-copy p{ font-size:1.06rem; line-height:1.8; color:var(--graphite); margin-bottom:20px; }
+  .club-list{ display:flex; flex-direction:column; margin-top:10px; }
+  .club-list li{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0; border-bottom:1px solid var(--paper-line);
+    font-family:var(--display); font-weight:600; font-size:.98rem;
+  }
+  .club-list li span{ font-family:var(--mono); font-size:.64rem; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; }
+  .club-list li:first-child{ border-top:1px solid var(--paper-line); }
+
+  /* ---------- values ---------- */
+  .values{ background:var(--white); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
+  .values .wrap{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; }
+  @media (max-width:760px){ .values .wrap{ grid-template-columns:1fr; } }
+  .value{ padding:60px 40px; border-left:1px solid var(--paper-line); }
+  .value:first-child{ border-left:none; }
+  @media (max-width:760px){ .value{ border-left:none; border-top:1px solid var(--paper-line); } .value:first-child{ border-top:none; } }
+  .value-mark{ font-family:var(--mono); color:var(--gold); font-size:.72rem; letter-spacing:.12em; }
+  .value h3{ font-size:1.3rem; margin:14px 0 12px; }
+  .value p{ color:var(--graphite); line-height:1.7; font-size:.96rem; }
+
+  /* ---------- contact ---------- */
+  .contact{ background:var(--ink); color:var(--white); }
+  .contact-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:80px; }
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:50px; } }
+  .contact-info p{ color:var(--mist); line-height:1.8; margin-top:18px; max-width:400px; }
+  .contact-detail{ margin-top:40px; display:flex; flex-direction:column; gap:18px; }
+  .contact-detail div{ border-top:1px solid var(--ink-line); padding-top:16px; }
+  .contact-detail span{ display:block; font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+  .contact-detail a, .contact-detail p{ color:var(--white); font-size:1rem; }
+  .contact-detail a.secondary{ display:block; margin-top:4px; opacity:.82; font-size:.92rem; }
+
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  @media (max-width:560px){ .form-grid{ grid-template-columns:1fr; } }
+  .field{ display:flex; flex-direction:column; gap:10px; }
+  .field.full{ grid-column:1 / -1; }
+  .field label{ font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--mist); }
+  .field input, .field select, .field textarea{
+    background:transparent; border:none; border-bottom:1px solid var(--ink-line);
+    color:var(--white); font-family:var(--body); font-size:1rem; padding:10px 2px;
+    transition:border-color .3s var(--ease);
+  }
+  .field select option{ background:var(--ink); color:var(--white); }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--gold);
+  }
+  .field textarea{ resize:vertical; min-height:70px; }
+  .form-foot{ display:flex; align-items:center; gap:22px; margin-top:12px; flex-wrap:wrap; }
+  .form-note{ font-size:.82rem; color:var(--mist); }
+  .form-msg{ font-family:var(--mono); font-size:.78rem; color:var(--gold); min-height:1em; }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--ink); border-top:1px solid var(--ink-line); padding:56px 0 34px; color:var(--mist); }
+  .foot-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:30px; margin-bottom:44px; }
+  .foot-links{ display:flex; gap:34px; flex-wrap:wrap; }
+  .foot-links a{ font-size:.86rem; color:var(--mist); transition:color .3s; }
+  .foot-links a:hover{ color:var(--gold); }
+  .foot-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; border-top:1px solid var(--ink-line); padding-top:24px; font-size:.78rem; font-family:var(--mono); letter-spacing:.02em; }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="wrap">
+      <a href="#top" class="brand">
+        <svg viewBox="0 0 48 40" fill="none">
+          <path d="M6 34 L6 18 L14 26 L24 10 L34 26 L42 18 L42 34 Z" fill="none" stroke="#B7975F" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="6" y1="34" x2="42" y2="34" stroke="#B7975F" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="6" cy="16" r="2.6" fill="#B7975F"/>
+          <circle cx="24" cy="8" r="2.8" fill="#B7975F"/>
+          <circle cx="42" cy="16" r="2.6" fill="#B7975F"/>
+        </svg>
+        <span class="brand-word">Costa Daurada<span>Sports &amp; Events</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#programs" data-i18n="nav.programs">Programs</a>
+        <a href="#legacy" data-i18n="nav.legacy">Legacy</a>
+        <a href="#track" data-i18n="nav.track">Track Record</a>
+      </div>
+      <div class="nav-cta">
+        <div class="lang-switch">
+          <button type="button" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a href="#contact" class="btn btn-gold" data-i18n="nav.cta">Request a Program</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="lang-switch">
+      <button type="button" data-lang="es">ES</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#programs" data-i18n="nav.programs">Programs</a>
+    <a href="#legacy" data-i18n="nav.legacy">Legacy</a>
+    <a href="#track" data-i18n="nav.track">Track Record</a>
+    <a href="#contact" class="btn btn-gold" data-i18n="nav.cta" style="font-size:.8rem;">Request a Program</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-glow"></div>
+    <svg class="hero-beams" viewBox="0 0 240 200" fill="none">
+      <g class="beam"><path d="M120 40 L-40 260 L280 260 Z" fill="url(#g1)"/></g>
+      <g class="beam"><path d="M120 40 L20 260 L340 260 Z" fill="url(#g1)"/></g>
+      <g class="beam"><path d="M120 40 L-140 260 L180 260 Z" fill="url(#g1)"/></g>
+      <defs>
+        <linearGradient id="g1" x1="120" y1="40" x2="120" y2="260" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#B7975F" stop-opacity=".5"/>
+          <stop offset="1" stop-color="#B7975F" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="eyebrow hero-eyebrow reveal" style="--i:0" data-i18n="hero.eyebrow">A Lifetime Experience</div>
+        <h1 class="reveal" style="--i:1" data-i18n="hero.h1">Where Spanish<br>football <em>begins.</em></h1>
+        <p class="lede reveal" style="--i:2" data-i18n="hero.lede">Elite soccer programs across Europe.</p>
+        <div class="hero-ctas reveal" style="--i:3">
+          <a href="#programs" class="btn btn-gold" data-i18n="hero.cta1">Explore Programs</a>
+          <a href="#contact" class="btn btn-ghost-dark" data-i18n="hero.cta2">Request a Program</a>
+        </div>
+        <div class="scroll-cue reveal" style="--i:4"><span class="line"></span><span data-i18n="hero.scroll">Scroll</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap">
+      <div class="stat reveal" style="--i:0"><div class="stat-num" data-count="13">0</div><div class="stat-label" data-i18n="stat.label1">Clubs and Academies We Work With</div></div>
+      <div class="stat reveal" style="--i:1"><div class="stat-num" data-count="6">0</div><div class="stat-label" data-i18n="stat.label2">Years Perfecting the Method</div></div>
+      <div class="stat reveal" style="--i:2"><div class="stat-num" data-count="15">0</div><div class="stat-label" data-i18n="stat.label3">Careers That Started Here</div></div>
+      <div class="stat reveal" style="--i:3"><div class="stat-num" data-count="2">0</div><div class="stat-label" data-i18n="stat.label4">Dedicated Programs</div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-copy">
+          <div class="eyebrow reveal" style="--i:0" data-i18n="about.eyebrow">The Company</div>
+          <h2 class="reveal" style="--i:1; margin-top:18px;" data-i18n="about.h2">Experts in world-class football.</h2>
+          <div style="margin-top:28px;">
+            <p class="reveal" style="--i:2" data-i18n="about.p1">About paragraph 1.</p>
+            <p class="reveal" style="--i:3" data-i18n="about.p2">About paragraph 2.</p>
+          </div>
+          <p class="reveal section-label" style="--i:4" data-i18n="about.clubs_label">Methodologies and academies we work with</p>
+          <div class="club-row reveal" style="--i:4">
+            <span class="club-pill">Fundación Real Madrid</span>
+            <span class="club-pill">Sporting de Portugal</span>
+            <span class="club-pill">PSV Academy</span>
+            <span class="club-pill">AC Milan Palauno Schools</span>
+            <span class="club-pill">Juventus</span>
+            <span class="club-pill">Real Sociedad</span>
+            <span class="club-pill">Girona FC</span>
+            <span class="club-pill">RCD Espanyol</span>
+            <span class="club-pill">Atlético de Madrid</span>
+            <span class="club-pill">Valencia CF</span>
+            <span class="club-pill">PSV Schools</span>
+            <span class="club-pill">CE Sabadell</span>
+            <span class="club-pill">FC Barcelona Escola</span>
+          </div>
+        </div>
+        <div class="about-mark reveal" style="--i:2">
+          <svg viewBox="0 0 340 340" fill="none">
+            <circle cx="170" cy="170" r="169" stroke="#0B0B0C" stroke-opacity=".12"/>
+            <circle cx="170" cy="170" r="130" stroke="#B7975F" stroke-opacity=".35"/>
+            <path d="M110 210 L110 150 L145 180 L170 110 L195 180 L230 150 L230 210 Z" fill="none" stroke="#0B0B0C" stroke-opacity=".7" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <line x1="110" y1="210" x2="230" y2="210" stroke="#0B0B0C" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="110" cy="146" r="4" fill="#B7975F"/>
+            <circle cx="170" cy="106" r="5" fill="#B7975F"/>
+            <circle cx="230" cy="146" r="4" fill="#B7975F"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section" id="programs" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal" style="--i:0" data-i18n="programs.eyebrow">Programs</div>
+        <h2 class="reveal" style="--i:1" data-i18n="programs.h2">Two paths. One standard.</h2>
+        <p class="reveal" style="--i:2" data-i18n="programs.lede">Every program is built around real football.</p>
+      </div>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal" style="--i:0">
+        <div class="program-num" data-i18n="program1.num">01 — For Teams</div>
+        <h3 data-i18n="program1.h3">Train like a professional.</h3>
+        <p data-i18n="program1.p">Program description.</p>
+        <ul class="format-list">
+          <li data-i18n="program1.li1">Elite training camps</li>
+          <li data-i18n="program1.li2">Friendly tours</li>
+          <li data-i18n="program1.li3">Competitive tournaments</li>
+          <li data-i18n="program1.li4">Pre-season training</li>
+        </ul>
+      </div>
+      <div class="program-card reveal" style="--i:1">
+        <div class="program-num" data-i18n="program2.num">02 — For Coaches</div>
+        <h3 data-i18n="program2.h3">The foundations of European football.</h3>
+        <p data-i18n="program2.p">Program description.</p>
+        <ul class="format-list">
+          <li data-i18n="program2.li1">Coaching education</li>
+          <li data-i18n="program2.li2">Methodology transfer</li>
+          <li data-i18n="program2.li3">Youth-category foundations</li>
+          <li data-i18n="program2.li4">On-pitch mentoring</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGACY / TICKER -->
+  <section class="legacy" id="legacy">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal" style="--i:0" data-i18n="legacy.eyebrow">Legacy</div>
+        <h2 class="reveal" style="--i:1" data-i18n="legacy.h2">Every one of them started exactly where you're standing.</h2>
+        <p class="reveal" style="--i:2" data-i18n="legacy.p">The methodologies that shaped them.</p>
+      </div>
+    </div>
+    <div class="ticker-outer">
+      <div class="ticker-track" id="tickerTrack">
+        <div class="ticker-item">Leo Messi</div>
+        <div class="ticker-item">Xavi Hernández</div>
+        <div class="ticker-item">Andrés Iniesta</div>
+        <div class="ticker-item">Carles Puyol</div>
+        <div class="ticker-item">Iker Casillas</div>
+        <div class="ticker-item">Pep Guardiola</div>
+        <div class="ticker-item">Raúl González</div>
+        <div class="ticker-item">Cesc Fàbregas</div>
+        <div class="ticker-item">Gerard Piqué</div>
+        <div class="ticker-item">Víctor Valdés</div>
+        <div class="ticker-item">Pedro Rodríguez</div>
+        <div class="ticker-item">Juan Mata</div>
+        <div class="ticker-item">Roberto Soldado</div>
+        <div class="ticker-item">Álvaro Negredo</div>
+        <div class="ticker-item">Sergio García</div>
+        <div class="ticker-item">Leo Messi</div>
+        <div class="ticker-item">Xavi Hernández</div>
+        <div class="ticker-item">Andrés Iniesta</div>
+        <div class="ticker-item">Carles Puyol</div>
+        <div class="ticker-item">Iker Casillas</div>
+        <div class="ticker-item">Pep Guardiola</div>
+        <div class="ticker-item">Raúl González</div>
+        <div class="ticker-item">Cesc Fàbregas</div>
+        <div class="ticker-item">Gerard Piqué</div>
+        <div class="ticker-item">Víctor Valdés</div>
+        <div class="ticker-item">Pedro Rodríguez</div>
+        <div class="ticker-item">Juan Mata</div>
+        <div class="ticker-item">Roberto Soldado</div>
+        <div class="ticker-item">Álvaro Negredo</div>
+        <div class="ticker-item">Sergio García</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section class="section" id="track">
+    <div class="wrap">
+      <div class="fac-grid">
+        <div class="fac-copy">
+          <div class="eyebrow reveal" style="--i:0" data-i18n="track.eyebrow">Track Record</div>
+          <h2 class="reveal" style="--i:1; margin-top:18px;" data-i18n="track.h2">Shaped by Europe's best methodologies.</h2>
+          <div style="margin-top:26px;">
+            <p class="reveal" style="--i:2" data-i18n="track.p1">Track record paragraph 1.</p>
+            <p class="reveal" style="--i:3" data-i18n="track.p2">Track record paragraph 2.</p>
+          </div>
+        </div>
+        <div>
+          <p class="section-label reveal" style="--i:0; margin-top:0;" data-i18n="track.list_label">Clubs and academies we work with</p>
+          <ul class="club-list">
+            <li class="reveal" style="--i:0">Fundación Real Madrid <span>España</span></li>
+            <li class="reveal" style="--i:0">Sporting de Portugal <span>Portugal</span></li>
+            <li class="reveal" style="--i:0">PSV Academy <span>Países Bajos</span></li>
+            <li class="reveal" style="--i:1">AC Milan Palauno Schools <span>Italia</span></li>
+            <li class="reveal" style="--i:1">Juventus <span>Italia</span></li>
+            <li class="reveal" style="--i:1">Real Sociedad <span>España</span></li>
+            <li class="reveal" style="--i:2">Girona FC <span>España</span></li>
+            <li class="reveal" style="--i:2">RCD Espanyol <span>España</span></li>
+            <li class="reveal" style="--i:2">Atlético de Madrid <span>España</span></li>
+            <li class="reveal" style="--i:3">Valencia CF <span>España</span></li>
+            <li class="reveal" style="--i:3">PSV Schools <span>Países Bajos</span></li>
+            <li class="reveal" style="--i:3">CE Sabadell <span>España</span></li>
+            <li class="reveal" style="--i:4">FC Barcelona Escola <span>España</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="wrap">
+      <div class="value reveal" style="--i:0">
+        <div class="value-mark" data-i18n="value1.mark">— Quality</div>
+        <h3 data-i18n="value1.h3">A professional standard.</h3>
+        <p data-i18n="value1.p">Value description.</p>
+      </div>
+      <div class="value reveal" style="--i:1">
+        <div class="value-mark" data-i18n="value2.mark">— Closeness</div>
+        <h3 data-i18n="value2.h3">Shaped around your team.</h3>
+        <p data-i18n="value2.p">Value description.</p>
+      </div>
+      <div class="value reveal" style="--i:2">
+        <div class="value-mark" data-i18n="value3.mark">— Flexibility</div>
+        <h3 data-i18n="value3.h3">Camps, tours, tournaments.</h3>
+        <p data-i18n="value3.p">Value description.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="eyebrow reveal" style="--i:0" data-i18n="contact.eyebrow">Get Started</div>
+          <h2 class="reveal" style="--i:1; margin-top:18px; color:#fff;" data-i18n="contact.h2">Request your program.</h2>
+          <p class="reveal" style="--i:2" data-i18n="contact.p">Tell us about your team.</p>
+          <div class="contact-detail reveal" style="--i:3">
+            <div>
+              <span data-i18n="contact.label_email">Email</span>
+              <a href="mailto:info@sportsandeventscostadaurada.com">info@sportsandeventscostadaurada.com</a>
+              <a href="mailto:programs@sportsandeventscostadaurada.com" class="secondary">programs@sportsandeventscostadaurada.com</a>
+            </div>
+            <div><span data-i18n="contact.label_phone">Phone</span><a href="tel:+34685858826">+34 685 858 826</a></div>
+            <div><span data-i18n="contact.label_address">Based in</span><p data-i18n="contact.address_value">Calafell, Costa Daurada, Tarragona, Spain</p></div>
+          </div>
+        </div>
+        <form class="contact-form reveal" style="--i:2" id="contactForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="fname" data-i18n="form.label_name">Full name</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="field">
+              <label for="femail" data-i18n="form.label_email">Email</label>
+              <input type="email" id="femail" name="femail" required>
+            </div>
+            <div class="field">
+              <label for="fclub" data-i18n="form.label_club">Club / Team</label>
+              <input type="text" id="fclub" name="fclub">
+            </div>
+            <div class="field">
+              <label for="fprogram" data-i18n="form.label_program">Program interest</label>
+              <select id="fprogram" name="fprogram">
+                <option data-i18n="form.option1">For Teams</option>
+                <option data-i18n="form.option2">For Coaches</option>
+                <option data-i18n="form.option3">Not sure yet</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="fmessage" data-i18n="form.label_message">Message</label>
+              <textarea id="fmessage" name="fmessage" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btn btn-gold" data-i18n="form.submit">Send Request</button>
+            <span class="form-note" data-i18n="form.note">We'll reply within 1–2 business days.</span>
+          </div>
+          <div class="form-msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <a href="#top" class="brand">
+          <svg viewBox="0 0 48 40" fill="none">
+            <path d="M6 34 L6 18 L14 26 L24 10 L34 26 L42 18 L42 34 Z" fill="none" stroke="#B7975F" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+            <line x1="6" y1="34" x2="42" y2="34" stroke="#B7975F" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="6" cy="16" r="2.6" fill="#B7975F"/>
+            <circle cx="24" cy="8" r="2.8" fill="#B7975F"/>
+            <circle cx="42" cy="16" r="2.6" fill="#B7975F"/>
+          </svg>
+          <span class="brand-word">Costa Daurada<span>Sports &amp; Events</span></span>
+        </a>
+        <div class="foot-links">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#programs" data-i18n="nav.programs">Programs</a>
+          <a href="#legacy" data-i18n="nav.legacy">Legacy</a>
+          <a href="#track" data-i18n="nav.track">Track Record</a>
+          <a href="#contact" data-i18n="nav.cta_footer">Contact</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span data-i18n="footer.rights">© 2026 Sports &amp; Events Costa Daurada. All rights reserved.</span>
+        <span data-i18n="footer.tagline">A Lifetime Experience</span>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  const translations = {
+    es: {
+      "nav.about":"Sobre Nosotros",
+      "nav.programs":"Programas",
+      "nav.legacy":"Legado",
+      "nav.track":"Trayectoria",
+      "nav.cta":"Solicita un Programa",
+      "nav.cta_footer":"Contacto",
+      "hero.eyebrow":"Una Experiencia Para Toda la Vida",
+      "hero.h1":"Fútbol europeo,<br>sello <em>español.</em>",
+      "hero.lede":"Programas de fútbol de élite en toda Europa, construidos sobre las metodologías de las mejores academias del continente. En el pasado y en el presente hemos trabajado con clubes y academias como Fundación Real Madrid, Juventus, PSV Academy y FC Barcelona Escola, entre otros — para equipos, y para los entrenadores que los forman.",
+      "hero.cta1":"Ver Programas",
+      "hero.cta2":"Solicita un Programa",
+      "hero.scroll":"Desplázate",
+      "stat.label1":"Clubes y Academias con los que Colaboramos",
+      "stat.label2":"Años Perfeccionando el Método",
+      "stat.label3":"Carreras que Empezaron Aquí",
+      "stat.label4":"Programas Especializados",
+      "about.eyebrow":"La Empresa",
+      "about.h2":"Expertos en fútbol de primer nivel, con las mejores metodologías de Europa.",
+      "about.p1":"<strong>Sports &amp; Events Costa Daurada</strong> diseña programas de fútbol de primer nivel para adultos, jóvenes y niños, construidos sobre las metodologías que han definido el fútbol europeo en los últimos años.",
+      "about.p2":"Trabajamos con clubes, academias e instalaciones en toda Europa — aportando estructura, coaching y estándares profesionales a cada programa, ya sea pensado para un equipo o para un entrenador. En el pasado y en el presente hemos colaborado con algunas de las mejores metodologías del continente.",
+      "about.clubs_label":"Metodologías y academias con las que colaboramos",
+      "programs.eyebrow":"Programas",
+      "programs.h2":"Dos caminos. Un mismo estándar.",
+      "programs.lede":"Sea cual sea tu papel — en el campo o en la banda — cada programa está construido en torno al fútbol profesional real, no a una versión simplificada.",
+      "program1.num":"01 — Para Equipos",
+      "program1.h3":"Entrena como un profesional, por un día o por una temporada.",
+      "program1.p":"Cada programa se adapta a tu nivel — desde una cantera que busca dar un salto de calidad, hasta un equipo amateur que se pone a prueba antes de la temporada, o un primer equipo que prepara torneos competitivos. Trabajamos en distintos puntos de Europa, con sesiones apoyadas, en el pasado y en el presente, en metodologías de clubes y academias como Fundación Real Madrid, Real Sociedad, Girona FC y RCD Espanyol, siempre con entrenadores cualificados y un estándar profesional.",
+      "program1.li1":"Campus de entrenamiento de élite",
+      "program1.li2":"Giras amistosas",
+      "program1.li3":"Torneos competitivos",
+      "program1.li4":"Pretemporada",
+      "program2.num":"02 — Para Entrenadores",
+      "program2.h3":"Los fundamentos del fútbol europeo, de quienes lo enseñan.",
+      "program2.p":"Con el mismo nivel de exigencia que nuestros programas para equipos, nuestra formación de entrenadores se nutre de la colaboración, pasada y presente, con metodologías como las de PSV Academy, Juventus y Sporting de Portugal, entre otras. Está pensada para abrir tu mente futbolística, afinar tu lectura del juego y darte las herramientas para transmitir lo esencial — empezando por los más jóvenes.",
+      "program2.li1":"Formación de entrenadores",
+      "program2.li2":"Transferencia de metodología",
+      "program2.li3":"Fundamentos de categorías base",
+      "program2.li4":"Mentoría en el campo",
+      "legacy.eyebrow":"Legado",
+      "legacy.h2":"Todos ellos empezaron exactamente donde tú estás ahora.",
+      "legacy.p":"Messi. Xavi. Iniesta. Puyol. Casillas. Guardiola. Las metodologías que los formaron son las mismas sobre las que construimos cada uno de nuestros programas.",
+      "track.eyebrow":"Trayectoria",
+      "track.h2":"Formados en las mejores metodologías de Europa.",
+      "track.p1":"En el pasado y en el presente, nuestros programas y eventos nos han llevado a colaborar con clubes, academias y escuelas de fútbol en distintos puntos de Europa, con sesiones dirigidas por entrenadores cualificados al mismo estándar que un equipo profesional.",
+      "track.p2":"Sea cual sea el punto de partida de tu programa, encontrarás el mismo trato de calidad, la misma cercanía y la flexibilidad para adaptar la experiencia a tu equipo.",
+      "track.list_label":"Clubes y academias con los que colaboramos",
+      "value1.mark":"— Calidad",
+      "value1.h3":"Un estándar profesional, sea cual sea tu nivel.",
+      "value1.p":"Cada sesión se construye con el mismo estándar, ya seas un primer equipo preparando la competición o un equipo juvenil pisando un campo profesional por primera vez.",
+      "value2.mark":"— Cercanía",
+      "value2.h3":"Adaptado a tu equipo, no a un itinerario fijo.",
+      "value2.p":"Los entrenadores adaptan cada sesión al punto real en el que está tu equipo — haciendo visible una mejora real al terminar cada una de ellas.",
+      "value3.mark":"— Flexibilidad",
+      "value3.h3":"Campus, giras, torneos o pretemporada.",
+      "value3.p":"Sea cual sea el formato que encaje con tu calendario y tus objetivos, construimos el programa a tu medida — no al revés.",
+      "contact.eyebrow":"Empieza Ahora",
+      "contact.h2":"Solicita tu programa.",
+      "contact.p":"Cuéntanos sobre tu equipo o club, y construiremos un programa a tu medida — campus, gira, torneo o formación de entrenadores.",
+      "contact.label_email":"Correo",
+      "contact.label_phone":"Teléfono",
+      "contact.label_address":"Ubicados en",
+      "contact.address_value":"Calafell, Costa Daurada, Tarragona, España",
+      "form.label_name":"Nombre completo",
+      "form.label_email":"Correo electrónico",
+      "form.label_club":"Club / Equipo",
+      "form.label_program":"Programa de interés",
+      "form.option1":"Para Equipos",
+      "form.option2":"Para Entrenadores",
+      "form.option3":"Aún no lo sé",
+      "form.label_message":"Mensaje",
+      "form.submit":"Enviar Solicitud",
+      "form.note":"Te responderemos en 1–2 días laborables.",
+      "form.msg_sent":"Abriendo tu cliente de correo para enviar esta solicitud…",
+      "footer.rights":"© 2026 Sports &amp; Events Costa Daurada. Todos los derechos reservados.",
+      "footer.tagline":"Una Experiencia Para Toda la Vida",
+      "meta.title":"Sports &amp; Events Costa Daurada — Una Experiencia Para Toda la Vida",
+      "meta.desc":"Programas de fútbol de élite en toda Europa. En el pasado y en el presente colaboramos con metodologías como Fundación Real Madrid, Juventus, PSV Academy y FC Barcelona Escola — para equipos y para entrenadores."
+    },
+    en: {
+      "nav.about":"About",
+      "nav.programs":"Programs",
+      "nav.legacy":"Legacy",
+      "nav.track":"Track Record",
+      "nav.cta":"Request a Program",
+      "nav.cta_footer":"Contact",
+      "hero.eyebrow":"A Lifetime Experience",
+      "hero.h1":"European football,<br>Spanish <em>edge.</em>",
+      "hero.lede":"Elite soccer programs across Europe, built on the methodologies of the continent's best academies. In the past and in the present we have worked with clubs and academies including Fundación Real Madrid, Juventus, PSV Academy and FC Barcelona Escola, among others — for teams, and for the coaches who shape them.",
+      "hero.cta1":"Explore Programs",
+      "hero.cta2":"Request a Program",
+      "hero.scroll":"Scroll",
+      "stat.label1":"Clubs and Academies We Work With",
+      "stat.label2":"Years Perfecting the Method",
+      "stat.label3":"Careers That Started Here",
+      "stat.label4":"Dedicated Programs",
+      "about.eyebrow":"The Company",
+      "about.h2":"Experts in world-class football, with Europe's best methodologies.",
+      "about.p1":"<strong>Sports &amp; Events Costa Daurada</strong> designs world-class soccer programs for adults, teenagers and children, built on the methodologies that have defined European football in recent years.",
+      "about.p2":"We work with clubs, academies and facilities across Europe — bringing structure, coaching and professional standards to every program, whether built for a team or for a coach. In the past and in the present, we have collaborated with some of the best methodologies on the continent.",
+      "about.clubs_label":"Methodologies and academies we work with",
+      "programs.eyebrow":"Programs",
+      "programs.h2":"Two paths. One standard.",
+      "programs.lede":"Whatever your role — on the pitch or on the touchline — every program is built around real professional football, not a simplified version of it.",
+      "program1.num":"01 — For Teams",
+      "program1.h3":"Train like a professional, for a day or a season.",
+      "program1.p":"Every program is adapted to your level — from a youth academy chasing an elite edge, to an amateur side testing itself before the season, to a first team preparing for competitive tournaments. We work across Europe, with sessions supported, in the past and in the present, by methodologies from clubs and academies including Fundación Real Madrid, Real Sociedad, Girona FC and RCD Espanyol, always with qualified coaches and a professional standard.",
+      "program1.li1":"Elite training camps",
+      "program1.li2":"Friendly tours",
+      "program1.li3":"Competitive tournaments",
+      "program1.li4":"Pre-season training",
+      "program2.num":"02 — For Coaches",
+      "program2.h3":"The foundations of European football, from those who teach it.",
+      "program2.p":"Held to the same standard as our team programs, our coaching education draws on collaboration, past and present, with methodologies including PSV Academy, Juventus and Sporting de Portugal, among others. It's built to open your footballing mind, sharpen how you read the game, and hand you the tools to transfer what matters most — starting with your youngest players.",
+      "program2.li1":"Coaching education",
+      "program2.li2":"Methodology transfer",
+      "program2.li3":"Youth-category foundations",
+      "program2.li4":"On-pitch mentoring",
+      "legacy.eyebrow":"Legacy",
+      "legacy.h2":"Every one of them started exactly where you're standing.",
+      "legacy.p":"Messi. Xavi. Iniesta. Puyol. Casillas. Guardiola. The same methodologies that shaped them are what every one of our programs is built on.",
+      "track.eyebrow":"Track Record",
+      "track.h2":"Shaped by Europe's best methodologies.",
+      "track.p1":"In the past and in the present, our programs and events have led us to collaborate with clubs, academies and football schools across Europe, with sessions led by qualified coaches to the same standard as a professional side.",
+      "track.p2":"Wherever your program takes you, you'll find the same quality of treatment, the same closeness, and the flexibility to shape the experience around your team.",
+      "track.list_label":"Clubs and academies we work with",
+      "value1.mark":"— Quality",
+      "value1.h3":"A professional standard, whatever your level.",
+      "value1.p":"Every session is built to the same standard, whether you're a first team preparing for competition or a youth side stepping onto a professional pitch for the first time.",
+      "value2.mark":"— Closeness",
+      "value2.h3":"Shaped around your team, not a fixed itinerary.",
+      "value2.p":"Coaches adapt every session to where your team actually is — making real improvement visible by the end of each one.",
+      "value3.mark":"— Flexibility",
+      "value3.h3":"Camps, tours, tournaments or pre-season.",
+      "value3.p":"Whatever format fits your calendar and your goals, we build the program around it — not the other way around.",
+      "contact.eyebrow":"Get Started",
+      "contact.h2":"Request your program.",
+      "contact.p":"Tell us about your team or club, and we'll build a program around it — camp, tour, tournament or coaching education.",
+      "contact.label_email":"Email",
+      "contact.label_phone":"Phone",
+      "contact.label_address":"Based in",
+      "contact.address_value":"Calafell, Costa Daurada, Tarragona, Spain",
+      "form.label_name":"Full name",
+      "form.label_email":"Email",
+      "form.label_club":"Club / Team",
+      "form.label_program":"Program interest",
+      "form.option1":"For Teams",
+      "form.option2":"For Coaches",
+      "form.option3":"Not sure yet",
+      "form.label_message":"Message",
+      "form.submit":"Send Request",
+      "form.note":"We'll reply within 1–2 business days.",
+      "form.msg_sent":"Opening your email client to send this request…",
+      "footer.rights":"© 2026 Sports &amp; Events Costa Daurada. All rights reserved.",
+      "footer.tagline":"A Lifetime Experience",
+      "meta.title":"Sports &amp; Events Costa Daurada — A Lifetime Experience",
+      "meta.desc":"Elite soccer programs across Europe. In the past and in the present we collaborate with methodologies including Fundación Real Madrid, Juventus, PSV Academy and FC Barcelona Escola — for teams and for coaches."
+    }
+  };
+
+  let currentLang = 'es';
+
+  function setLang(lang){
+    if(!translations[lang]) return;
+    document.documentElement.lang = lang;
+    document.title = translations[lang]['meta.title'].replace('&amp;','&');
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if(metaDesc) metaDesc.setAttribute('content', translations[lang]['meta.desc']);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(translations[lang][key] !== undefined){
+        el.innerHTML = translations[lang][key];
+      }
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    localStorage.setItem('secd_lang', lang);
+    currentLang = lang;
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn=>{
+    btn.addEventListener('click', ()=> setLang(btn.dataset.lang));
+  });
+
+  const savedLang = localStorage.getItem('secd_lang');
+  setLang(savedLang === 'en' ? 'en' : 'es');
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive:true });
+
+  const burger = document.getElementById('burger');
+  const panel = document.getElementById('mobilePanel');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    panel.classList.toggle('open');
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open'); panel.classList.remove('open');
+  }));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const counters = document.querySelectorAll('.stat-num');
+  const countIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const start = performance.now();
+      const dur = 1100;
+      function tick(now){
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      countIo.unobserve(el);
+    });
+  }, { threshold:0.6 });
+  counters.forEach(el => countIo.observe(el));
+
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('formMsg');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.fname.value, email = form.femail.value, club = form.fclub.value,
+          program = form.fprogram.value, message = form.fmessage.value;
+    const subject = encodeURIComponent('Program request — ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Club/Team: ' + club + '\n' +
+      'Program interest: ' + program + '\n\n' +
+      message
+    );
+    window.location.href = 'mailto:programs@sportsandeventscostadaurada.com?subject=' + subject + '&body=' + body;
+    msg.textContent = translations[currentLang]['form.msg_sent'];
+  });
+</script>
+</body>
+</html>
