@@ -37,13 +37,12 @@
   .reveal{ opacity:0; transform:translateY(22px); transition:opacity .9s var(--ease), transform .9s var(--ease); transition-delay:calc(var(--i,0) * 90ms); }
   .reveal.is-visible{ opacity:1; transform:translateY(0); }
   @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; } }
-  .nav{ position:fixed; top:0; left:0; right:0; z-index:100; padding:22px 0; transition:background .5s var(--ease), padding .5s var(--ease), border-color .5s var(--ease); border-bottom:1px solid transparent; }
-  .nav.scrolled{ background:rgba(11,11,12,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); padding:14px 0; border-color:var(--ink-line); }
+  .nav{ position:fixed; top:0; left:0; right:0; z-index:100; padding:16px 0; transition:background .5s var(--ease), padding .5s var(--ease), border-color .5s var(--ease); border-bottom:1px solid transparent; }
+  .nav.scrolled{ background:rgba(11,11,12,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); padding:10px 0; border-color:var(--ink-line); }
   .nav .wrap{ display:flex; align-items:center; justify-content:space-between; }
-  .brand{ display:flex; align-items:center; gap:10px; color:var(--white); }
-  .brand-logo{ height:40px; width:auto; display:block; }
-  .brand-word{ font-family:var(--display); font-weight:700; font-size:.95rem; letter-spacing:.02em; }
-  .brand-word span{ display:block; font-family:var(--mono); font-weight:400; font-size:.58rem; letter-spacing:.24em; color:var(--gold); margin-top:2px; }
+  .brand{ display:flex; align-items:center; }
+  .brand-logo{ height:64px; width:auto; display:block; transition:height .4s var(--ease); }
+  .nav.scrolled .brand-logo{ height:44px; }
   .nav-links{ display:flex; align-items:center; gap:32px; }
   .nav-links a{ color:var(--mist); font-size:.86rem; font-weight:500; position:relative; padding:4px 0; transition:color .3s var(--ease); }
   .nav-links a::after{ content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease); }
@@ -96,14 +95,13 @@
   .section-head{ max-width:640px; margin-bottom:64px; }
   .section-head h2{ font-size:clamp(2rem,4vw,3.2rem); margin-top:18px; }
   .section-head p{ margin-top:20px; color:var(--graphite); font-size:1.05rem; line-height:1.7; max-width:560px; }
-  .about-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
-  @media (max-width:900px){ .about-grid{ grid-template-columns:1fr; gap:44px; } }
+  .promo-video-wrap{ max-width:900px; margin:0 auto; border:1px solid var(--paper-line); overflow:hidden; background:var(--ink-soft); }
+  .promo-video-wrap iframe{ width:100%; aspect-ratio:16/9; display:block; border:0; }
+  .about-copy{ max-width:760px; }
   .about-copy p{ font-size:1.06rem; line-height:1.8; color:var(--graphite); margin-bottom:20px; }
   .about-copy strong{ color:var(--ink); }
   .club-row{ display:flex; flex-wrap:wrap; gap:10px 14px; margin-top:14px; }
   .club-pill{ font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--paper-line); padding:8px 14px; color:var(--graphite); }
-  .about-mark{ display:flex; align-items:center; justify-content:center; }
-  .about-mark svg{ width:100%; max-width:340px; height:auto; }
   .programs-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--paper-line); }
   @media (max-width:860px){ .programs-grid{ grid-template-columns:1fr; } }
   .program-card{ background:var(--paper); padding:40px 48px 56px; position:relative; overflow:hidden; transition:background .4s var(--ease); }
@@ -192,7 +190,7 @@
   .form-note{ font-size:.82rem; color:var(--mist); }
   .form-msg{ font-family:var(--mono); font-size:.78rem; color:var(--gold); min-height:1em; }
   footer{ background:var(--ink); border-top:1px solid var(--ink-line); padding:56px 0 34px; color:var(--mist); }
-  .foot-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:30px; margin-bottom:44px; }
+  .foot-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:30px; margin-bottom:44px; }
   .foot-links{ display:flex; gap:26px; flex-wrap:wrap; }
   .foot-links a{ font-size:.86rem; color:var(--mist); transition:color .3s; }
   .foot-links a:hover{ color:var(--gold); }
@@ -204,8 +202,7 @@
   <nav class="nav" id="nav">
     <div class="wrap">
       <a href="#top" class="brand">
-        <img src="https://raw.githubusercontent.com/Sportsandeventscostadaurada/sportsandeventscostadaurada/main/logo.png" alt="Sports &amp; Events Costa Daurada Logo" class="brand-logo">
-        <span class="brand-word">Costa Daurada<span>Sports &amp; Events</span></span>
+        <img src="https://raw.githubusercontent.com/Sportsandeventscostadaurada/sportsandeventscostadaurada/main/logo.png" alt="Sports &amp; Events Costa Daurada" class="brand-logo">
       </a>
       <div class="nav-links">
         <a href="#about" data-i18n="nav.about">About</a>
@@ -233,6 +230,7 @@
     <a href="#about" data-i18n="nav.about">About</a>
     <a href="#programs" data-i18n="nav.programs">Programs</a>
     <a href="#multisport" data-i18n="nav.sports">Sports</a>
+    <a href="#promo-video" data-i18n="promo.eyebrow">Promotional Video</a>
     <a href="#itinerary" data-i18n="itinerary.eyebrow">Itinerary</a>
     <a href="#videos" data-i18n="video.eyebrow">Videos</a>
     <a href="#legacy" data-i18n="nav.legacy">Legacy</a>
@@ -267,40 +265,42 @@
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section" id="promo-video" style="padding-bottom:100px;">
     <div class="wrap">
-      <div class="about-grid">
-        <div class="about-copy">
-          <div class="eyebrow reveal" style="--i:0" data-i18n="about.eyebrow">The Company</div>
-          <h2 class="reveal" style="--i:1; margin-top:18px;" data-i18n="about.h2">Experts in world-class football.</h2>
-          <div style="margin-top:28px;">
-            <p class="reveal" style="--i:2" data-i18n="about.p1">About paragraph 1.</p>
-            <p class="reveal" style="--i:3" data-i18n="about.p2">About paragraph 2.</p>
-          </div>
-          <p class="reveal section-label" style="--i:4" data-i18n="about.clubs_label">Academies and methodologies we've collaborated with, past and present</p>
-          <div class="club-row reveal" style="--i:4">
-            <span class="club-pill">Fundación Real Madrid</span>
-            <span class="club-pill">Sporting de Portugal</span>
-            <span class="club-pill">PSV Schools</span>
-            <span class="club-pill">AC Milan Palauno Schools</span>
-            <span class="club-pill">Juventus</span>
-            <span class="club-pill">Real Sociedad</span>
-            <span class="club-pill">Girona FC</span>
-            <span class="club-pill">RCD Espanyol</span>
-            <span class="club-pill">Atlético de Madrid</span>
-            <span class="club-pill">Valencia CF</span>
-            <span class="club-pill">CE Sabadell</span>
-            <span class="club-pill">FC Barcelona Escola</span>
-          </div>
+      <div class="section-head" style="margin-bottom:44px;">
+        <div class="eyebrow reveal" style="--i:0" data-i18n="promo.eyebrow">Promotional Video</div>
+        <h2 class="reveal" style="--i:1" data-i18n="promo.h2">See it for yourself.</h2>
+        <p class="reveal" style="--i:2" data-i18n="promo.lede">A short film about what we do.</p>
+      </div>
+      <div class="promo-video-wrap reveal" style="--i:0">
+        <iframe src="https://www.youtube.com/embed/ijptU_dTjBQ" title="Promotional video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" style="padding-top:0;">
+    <div class="wrap">
+      <div class="about-copy">
+        <div class="eyebrow reveal" style="--i:0" data-i18n="about.eyebrow">The Company</div>
+        <h2 class="reveal" style="--i:1; margin-top:18px;" data-i18n="about.h2">Experts in world-class football.</h2>
+        <div style="margin-top:28px;">
+          <p class="reveal" style="--i:2" data-i18n="about.p1">About paragraph 1.</p>
+          <p class="reveal" style="--i:3" data-i18n="about.p2">About paragraph 2.</p>
         </div>
-        <div class="about-mark reveal" style="--i:2">
-          <svg viewBox="0 0 100 90" fill="none">
-            <circle cx="50" cy="45" r="44" stroke="#0B0B0C" stroke-opacity=".12"/>
-            <circle cx="50" cy="45" r="34" stroke="#B7975F" stroke-opacity=".35"/>
-            <path d="M28,56 L28,44 L33,51 L37,38 L42,51 L47,32 L52,51 L57,38 L61,51 L66,44 L66,56 Z" fill="none" stroke="#0B0B0C" stroke-opacity=".7" stroke-width="1.6" stroke-linejoin="round"/>
-            <rect x="28" y="56" width="38" height="4" fill="none" stroke="#0B0B0C" stroke-opacity=".7" stroke-width="1.4"/>
-            <circle cx="47" cy="32" r="2.4" fill="#B7975F"/>
-          </svg>
+        <p class="reveal section-label" style="--i:4" data-i18n="about.clubs_label">Academies and methodologies we've collaborated with, past and present</p>
+        <div class="club-row reveal" style="--i:4">
+          <span class="club-pill">Fundación Real Madrid</span>
+          <span class="club-pill">Sporting de Portugal</span>
+          <span class="club-pill">PSV Schools</span>
+          <span class="club-pill">AC Milan Palauno Schools</span>
+          <span class="club-pill">Juventus</span>
+          <span class="club-pill">Real Sociedad</span>
+          <span class="club-pill">Girona FC</span>
+          <span class="club-pill">RCD Espanyol</span>
+          <span class="club-pill">Atlético de Madrid</span>
+          <span class="club-pill">Valencia CF</span>
+          <span class="club-pill">CE Sabadell</span>
+          <span class="club-pill">FC Barcelona Escola</span>
         </div>
       </div>
     </div>
@@ -548,13 +548,13 @@
     <div class="wrap">
       <div class="foot-top">
         <a href="#top" class="brand">
-          <img src="https://raw.githubusercontent.com/Sportsandeventscostadaurada/sportsandeventscostadaurada/main/logo.png" alt="Sports &amp; Events Costa Daurada Logo" class="brand-logo" style="height:36px; width:auto;">
-          <span class="brand-word">Costa Daurada<span>Sports &amp; Events</span></span>
+          <img src="https://raw.githubusercontent.com/Sportsandeventscostadaurada/sportsandeventscostadaurada/main/logo.png" alt="Sports &amp; Events Costa Daurada" class="brand-logo" style="height:52px;">
         </a>
         <div class="foot-links">
           <a href="#about" data-i18n="nav.about">About</a>
           <a href="#programs" data-i18n="nav.programs">Programs</a>
           <a href="#multisport" data-i18n="nav.sports">Sports</a>
+          <a href="#promo-video" data-i18n="promo.eyebrow">Promotional Video</a>
           <a href="#itinerary" data-i18n="itinerary.eyebrow">Itinerary</a>
           <a href="#videos" data-i18n="video.eyebrow">Videos</a>
           <a href="#legacy" data-i18n="nav.legacy">Legacy</a>
@@ -578,6 +578,8 @@
       "hero.lede":"Elite sports programs across Europe, built on the methodologies of the continent's best academies. We've collaborated with clubs and academies including Fundación Real Madrid, Juventus, PSV Schools and FC Barcelona Escola, among others, in the past and in the present — for teams, and for the coaches who shape them.",
       "hero.cta1":"Explore Programs","hero.cta2":"Request a Program","hero.scroll":"Scroll",
       "stat.label1":"Academies and Methodologies — Past and Present","stat.label2":"Years Perfecting the Method","stat.label3":"Dedicated Programs",
+      "promo.eyebrow":"Promotional Video","promo.h2":"See it for yourself.",
+      "promo.lede":"A short film capturing the energy, the pitches and the people behind every program.",
       "about.eyebrow":"The Company",
       "about.h2":"Experts in world-class football, with Europe's best methodologies.",
       "about.p1":"<strong>Sports &amp; Events Costa Daurada</strong> designs world-class sports programs for adults, teenagers and children, built on the methodologies that have defined European football in recent years.",
@@ -650,6 +652,8 @@
       "hero.lede":"Programas deportivos de élite en toda Europa, construidos sobre las metodologías de las mejores academias del continente. Hemos colaborado con clubes y academias como Fundación Real Madrid, Juventus, PSV Schools y FC Barcelona Escola, entre otros, en el pasado y en el presente — para equipos, y para los entrenadores que los forman.",
       "hero.cta1":"Ver Programas","hero.cta2":"Solicita un Programa","hero.scroll":"Desplázate",
       "stat.label1":"Academias y Metodologías — Pasado y Presente","stat.label2":"Años Perfeccionando el Método","stat.label3":"Programas Especializados",
+      "promo.eyebrow":"Vídeo Promocional","promo.h2":"Compruébalo tú mismo.",
+      "promo.lede":"Un vídeo que recoge la energía, los campos y a las personas detrás de cada programa.",
       "about.eyebrow":"La Empresa",
       "about.h2":"Expertos en fútbol de primer nivel, con las mejores metodologías de Europa.",
       "about.p1":"<strong>Sports &amp; Events Costa Daurada</strong> diseña programas deportivos de primer nivel para adultos, jóvenes y niños, construidos sobre las metodologías que han definido el fútbol europeo en los últimos años.",
